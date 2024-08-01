@@ -10,12 +10,15 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Button _startButton;
     [SerializeField] private Button _restartButton;
 
-    [SerializeField] private EnemyManager _enemyManager;
+    private EnemyManager _enemyManager;
 
-    [SerializeField] private Player _player;
+    private Player _player;
 
-    private void Start()
+    public void Initialize(Player player, EnemyManager enemyManager)
     {
+        _player = player;
+        _enemyManager = enemyManager;
+
         _enemyManager.AllEnemiesDestroy += Winner;
         _player.Damagable.OnDeath += Lose;
 

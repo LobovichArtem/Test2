@@ -6,7 +6,7 @@ public class PlayerController
 
     private PlayerInput _playerInput;
 
-    public void Initialize()
+    public PlayerController()
     {
         _playerInput = new PlayerInput();
     }

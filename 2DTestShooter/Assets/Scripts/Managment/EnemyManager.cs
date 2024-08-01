@@ -10,7 +10,7 @@ public class EnemyManager : MonoBehaviour
 
     [SerializeField] private Transform _finishPoint;
 
-    [SerializeField] private Player _player;
+    private Player _player;
 
     [SerializeField] private EnemySpawner _enemySpawner;
 
@@ -19,8 +19,11 @@ public class EnemyManager : MonoBehaviour
 
     public UnityAction AllEnemiesDestroy;
 
-    public void Initialize()
+    public void Initialize(Player player, EnemySpawner enemySpawner)
     {
+        _player = player;
+        _enemySpawner = enemySpawner;
+
         _enemySpawner.Initialize(_levelConfig);
         _enemySpawner.UnitSpawn += Add;
 
@@ -42,11 +45,6 @@ public class EnemyManager : MonoBehaviour
     {
         StopCoroutine(_checkEnemies);
         _enemySpawner.StopSpawn();
-    }
-
-    private void Awake()
-    {
-        Initialize();
     }
 
     private void OnDestroy()

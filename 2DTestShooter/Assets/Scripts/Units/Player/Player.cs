@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using Zenject;
 
 [RequireComponent(typeof(Move), typeof(PlayerUIHp))]
 public class Player : MonoBehaviour
@@ -14,11 +14,11 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage) => Damagable.TakeDamage(damage);
 
-
-    private void Awake()
+    [Inject]
+    public void Initialize()
     {
+        Debug.Log("Plauer Initialize");
         _playerController = new PlayerController();
-        _playerController.Initialize();
         _playerController.OnEnable();
 
         _move = GetComponent<Move>();

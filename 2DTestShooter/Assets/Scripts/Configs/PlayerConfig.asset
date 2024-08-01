@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerConfig
   m_EditorClassIdentifier: 
   _hpConfig:
-    <Hp>k__BackingField: 10
+    <Hp>k__BackingField: 8
   <Speed>k__BackingField: 3.05
   <GunConfig>k__BackingField:
     <FireRate>k__BackingField: 0.25

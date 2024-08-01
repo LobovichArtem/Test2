@@ -3,8 +3,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "LevelConfig", menuName = "Level/LevelConfig")]
 public class LevelConfig : ScriptableObject
 {
-    //[field: SerializeField] public LayerMask EnemyLayer { get; private set; }
-
     [SerializeField] private Vector2Int _enemyCountRange;
     [SerializeField] private Vector2 _timeoutSpawnRange;
 

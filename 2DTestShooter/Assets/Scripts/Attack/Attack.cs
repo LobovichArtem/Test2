@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class Attack
 {
@@ -15,6 +16,7 @@ public class Attack
 
     private Transform _shotPoint;
 
+    [Inject]
     public Attack(IFinder iFinder, ObjectPool objectPool, GunConfig gunConfig, Transform shotPoint)
     {
         _enemyFinder = iFinder;
